@@ -4,36 +4,30 @@
  * and open the template in the editor.
  */
 package br.com.projfuncionario.dal;
+
 import java.sql.*;
 
 /**
- *Conexão com banco de dados
+ * Conexão com banco de dados
+ *
  * @author Luciano Albuquerque Lima
  * @version 1.1
  */
 public class ModuloConexao {
-    
-     public static Connection conector(){
-        
-         Connection conexao = null;
-        
+
+    public static Connection conector() {
+
+        Connection conexao = null;
+
         //a linha abaixo chama o drive que foi importado para a biblioteca 
         String driver = "com.mysql.cj.jdbc.Driver";
         //Armazenando informações referente ao banco
-         //Banco teste
-         String url = "jdbc:mysql://127.0.0.1:3306/dbempresa?characterEncoding=utf-8";
-         
-         
-        //Banco oficial e limpo 
-        //String url = "jdbc:mysql://127.0.0.1:3306/asmdb?characterEncoding=utf-8";
-          String user = "dba";
-        
+
+        String url = "jdbc:mysql://127.0.0.1:3306/dbempresa?characterEncoding=utf-8";
+        String user = "dba";
         //Senha do banco da minha maquina 
-         String password = "Sist@123456";
-        
-        //Acesso Banco ASM
-       //String password = "LPSist@!2517";
-        
+        String password = "Sist@123456";
+
         //Estabelecendo conexao com o banco
         try {
             Class.forName(driver);
@@ -44,5 +38,5 @@ public class ModuloConexao {
             return null;
         }
     }
-    
+
 }
